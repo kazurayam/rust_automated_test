@@ -10,6 +10,10 @@ impl Rectangle {
     }
 }
 
+pub fn add_two(a: i32) -> i32 {
+    a + 2
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
@@ -17,6 +21,7 @@ mod tests {
         assert_eq!(2 + 2, 4);
     }
 
+    #[ignore]
     #[test]
     fn another() {
         panic!("Make this test fail");
@@ -35,5 +40,11 @@ mod tests {
             height: 1,
         };
         assert!(larger.can_hold(&smaller));
+    }
+
+
+    #[test]
+    fn it_adds_two() {
+        assert_eq!(4, add_two(2));
     }
 }
